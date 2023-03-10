@@ -239,6 +239,9 @@
             "./templates/base.html.twig"
         ]
     },
+    "symfony/ux-turbo": {
+        "version": "v2.7.1"
+    },
     "symfony/validator": {
         "version": "6.2",
         "recipe": {
@@ -294,6 +297,9 @@
             "./package.json",
             "./webpack.config.js"
         ]
+    },
+    "symfonycasts/verify-email-bundle": {
+        "version": "v1.13.0"
     },
     "twig/extra-bundle": {
         "version": "v3.5.1"
