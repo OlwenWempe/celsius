@@ -1,18 +1,18 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background: center / contain no-repeat url("../../public/images/IMAGE CELSIUS.jpg");
-	background-size: cover;
-	background-attachment: fixed;
+  background: center / contain no-repeat
+    url("../../public/images/IMAGE CELSIUS.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .section {
-    min-height: 40px;
-    text-align: center;
-	font-size: 3rem;
-	background: #e6e6e6;
-	opacity: 0.7;
-	padding: 2rem;
-	border: 0.1rem solid #fff;
-	border-radius: 1rem;
+  min-height: 40px;
+  text-align: center;
+  background: #e6e6e6;
+  opacity: 0.7;
+  padding: 2rem;
+  border: 0.1rem solid #fff;
+  border-radius: 1rem;
 }
