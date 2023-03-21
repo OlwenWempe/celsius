@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/donneur/d/ordre')]
+#[Route('/client')]
 class DonneurDOrdreController extends AbstractController
 {
     #[Route('/', name: 'app_donneur_d_ordre_index', methods: ['GET'])]
