@@ -1,26 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}DonneurDOrdre{% endblock %}
+{% block title %}
+	{{ donneur_d_ordre.name }}
+{% endblock %}
 
-{% block body %}
-    <h1>DonneurDOrdre</h1>
+{% block main %}
+	<section>
+		<h1>{{ donneur_d_ordre.name }}</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ donneur_d_ordre.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ donneur_d_ordre.name }}</td>
-            </tr>
-        </tbody>
-    </table>
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ donneur_d_ordre.id }}</td>
+				</tr>
+				<tr>
+					<th>Raison Sociale</th>
+					<td>{{ donneur_d_ordre.name }}</td>
+				</tr>
+			</tbody>
+		</table>
 
-    <a href="{{ path('app_donneur_d_ordre_index') }}">back to list</a>
+		<a href="{{ path('app_donneur_d_ordre_index') }}">retour à la liste</a>
 
-    <a href="{{ path('app_donneur_d_ordre_edit', {'id': donneur_d_ordre.id}) }}">edit</a>
+		<a href="{{ path('app_donneur_d_ordre_edit', {'id': donneur_d_ordre.id}) }}">editer</a>
 
-    {{ include('donneur_d_ordre/_delete_form.html.twig') }}
+		{{ include('donneur_d_ordre/_delete_form.html.twig') }}
+	</section>
 {% endblock %}

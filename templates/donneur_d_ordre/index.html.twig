@@ -1,35 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}DonneurDOrdre index{% endblock %}
+{% block title %}Index client
+{% endblock %}
 
-{% block body %}
-    <h1>DonneurDOrdre index</h1>
+{% block main %}
+	<section>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for donneur_d_ordre in donneur_d_ordres %}
-            <tr>
-                <td>{{ donneur_d_ordre.id }}</td>
-                <td>{{ donneur_d_ordre.name }}</td>
-                <td>
-                    <a href="{{ path('app_donneur_d_ordre_show', {'id': donneur_d_ordre.id}) }}">show</a>
-                    <a href="{{ path('app_donneur_d_ordre_edit', {'id': donneur_d_ordre.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+		<h1>Index client</h1>
 
-    <a href="{{ path('app_donneur_d_ordre_new') }}">Create new</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nom</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for donneur_d_ordre in donneur_d_ordres %}
+					<tr>
+						<td>{{ donneur_d_ordre.id }}</td>
+						<td>{{ donneur_d_ordre.name }}</td>
+						<td>
+							<a href="{{ path('app_donneur_d_ordre_show', {'id': donneur_d_ordre.id}) }}">show</a>
+							<a href="{{ path('app_donneur_d_ordre_edit', {'id': donneur_d_ordre.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="3">Aucun client renseigné</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<a href="{{ path('app_donneur_d_ordre_new') }}">Créer nouveau</a>
+	</section>
 {% endblock %}

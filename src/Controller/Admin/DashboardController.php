@@ -50,7 +50,7 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToUrl('HomePage', 'fa fa-home', $this->generateUrl('app_main'));
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-dashboard');
-        yield MenuItem::linkToCrud('User', 'fa-solid fa-users', User::class);
+        yield MenuItem::linkToCrud('Users', 'fa-solid fa-users', User::class);
         // yield MenuItem::subMenu('User', 'fa-solid fa-users', User::class)->setSubItems([
 
         // ]);
