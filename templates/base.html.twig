@@ -2,12 +2,14 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Olwen Wempe">
 		<title>
-			{% block title %}Welcome!
+			{% block title %}Bienvenue
 			{% endblock %}
 		</title>
 		<link
-		rel="icon" href="./images/icon_celsius.png">
+		rel="icon" href="../images/icon_celsius.png">
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
@@ -22,12 +24,12 @@
 
 		<main class="container section mt-5">
 			{% for message in app.session.flashBag.get('info') %}
-				<div class="w-50 alert alert-info" role="alert">
+				<div class="mx-auto w-50 alert alert-info" role="alert">
 					{{ message }}
 				</div>
 			{% endfor %}
 			{% for message in app.session.flashBag.get('error') %}
-				<div class="w-50 alert alert-danger" role="alert">
+				<div class="mx-auto w-50 alert alert-danger" role="alert">
 					{{ message }}
 				</div>
 			{% endfor %}
