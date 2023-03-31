@@ -26,8 +26,8 @@ class UserCrudController extends AbstractCrudController
         yield IdField::new('id')
             ->onlyOnIndex();
         yield EmailField::new('email')
-            ->setHelp('Seul les mails en @postic.fr sont acceptés.');
-        $roles = ['ROLE_ADMIN', 'ROLE_USER'];
+            ->setHelp('Only emails from @postic.fr are accepted.');
+        $roles = ['ROLE_ADMIN', 'ROLE_SAV_SUPERVISOR', 'ROLE_SAV'];
         yield ChoiceField::new('roles')
             ->setFormType(ChoiceType::class)
             ->setChoices(array_combine($roles, $roles))
