@@ -23,7 +23,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 180, unique: true)]
     #[Assert\Regex(
         pattern: '/^[a-zA-Z0-9.!#$%&\'*+\\/=?^_`{|}~-]+@postic\.fr+$/',
-        message: 'Le mail doit dépendre du domaine postic.fr.'
+        message: 'Only emails from @postic.fr are accepted.'
     )]
     private ?string $email = null;
 
