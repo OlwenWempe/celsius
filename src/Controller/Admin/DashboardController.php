@@ -55,6 +55,7 @@ class DashboardController extends AbstractDashboardController
 
         // ]);
         yield MenuItem::linkToCrud('Sites', 'fa-solid fa-location-dot', Lieu::class);
+        yield MenuItem::linkToUrl('Recherche Google', 'fab fa-google', 'https://google.com');
     }
 
     public function configureActions(): Actions
