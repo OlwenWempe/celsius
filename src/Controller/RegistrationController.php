@@ -27,7 +27,13 @@ class RegistrationController extends AbstractController
         $this->emailVerifier = $emailVerifier;
     }
 
-    #[Route('/register', name: 'app_register')]
+    #[Route('/register')]
+    public function indexNoLocaleRegister(): Response
+    {
+        return $this->redirectToRoute('app_register', ['_locale' => 'fr']);
+    }
+
+    #[Route('/register/{_locale<%app.supported_locales%>}/', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, CelsiusAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
@@ -70,7 +76,13 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-    #[Route('/verify/email', name: 'app_verify_email')]
+    #[Route('/')]
+    public function indexNoLocaleVerifyEmail(): Response
+    {
+        return $this->redirectToRoute('app_verify_email', ['_locale' => 'fr']);
+    }
+
+    #[Route('/verify/email/{_locale<%app.supported_locales%>}/', name: 'app_verify_email')]
     public function verifyUserEmail(Request $request, TranslatorInterface $translator): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');

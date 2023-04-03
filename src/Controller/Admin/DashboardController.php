@@ -17,7 +17,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\UserMenu;
 
 class DashboardController extends AbstractDashboardController
 {
-    #[Route('/admin', name: 'admin')]
+    #[Route('/admin')]
+    public function indexNoLocale(): Response
+    {
+        return $this->redirectToRoute('admin', ['_locale' => 'fr']);
+    }
+
+    #[Route('/admin/{_locale<%app.supported_locales%>}/', name: 'admin')]
     public function index(): Response
     {
         // return parent::index();

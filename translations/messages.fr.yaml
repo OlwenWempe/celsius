@@ -1,3 +1,4 @@
+# Easy Admin
 Users: Utilisateurs
 User: l'utilisateur
 HomePage: Page d'accueil
@@ -10,8 +11,23 @@ Dashboard: Tableau de bord
 ROLE_ADMIN: Administrateur
 ROLE_SAV_SUPERVISOR: Superviseur SAV
 ROLE_SAV: Operateur SAV
+
+# Authentication
 Please enter a password: Veuillez renseigner un mot de passe.
 Only emails from @postic.fr are accepted.: Seul les mails en @postic.fr sont acceptés.
 There is already an account with this email: Un compte avec cet email existe déjà.
 If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in: Si un compte correspondant au mail renseigné existe, vous recevrez un mail contenant un code permettant de re-initialiser votre mot de passe. Ce lien expirera dans
+
+# dashboard
+Admin dashboard: Page administrateur
+
+# header
 Home: Page d'accueil
+Link: Lien
+Log Out: Deconnexion
+Log In: Connexion
+Sign up: Inscription
+
+# login
+Please login: Veuillez vous connecter
+forgotten password: mot de passe oublié
