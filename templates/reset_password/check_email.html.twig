@@ -10,6 +10,9 @@
 		{% endtrans %}
 		{{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
 	</p>
-	<p>If you don't receive an email please check your spam folder or
-		<a href="{{ path('app_forgot_password_request') }}">try again</a>.</p>
+	<p>
+		{% trans %}
+		If you don't receive an email please check your spam folder or
+		{% endtrans %}
+		<a href="{{ path('app_forgot_password_request') }}">{% trans %}try again{% endtrans %}</a>.</p>
 {% endblock %}

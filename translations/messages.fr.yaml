@@ -16,7 +16,6 @@ ROLE_SAV: Operateur SAV
 Please enter a password: Veuillez renseigner un mot de passe.
 Only emails from @postic.fr are accepted.: Seul les mails en @postic.fr sont acceptés.
 There is already an account with this email: Un compte avec cet email existe déjà.
-If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in: Si un compte correspondant au mail renseigné existe, vous recevrez un mail contenant un code permettant de re-initialiser votre mot de passe. Ce lien expirera dans
 
 # dashboard
 Admin dashboard: Page administrateur
@@ -31,3 +30,8 @@ Sign up: Inscription
 # login
 Please login: Veuillez vous connecter
 forgotten password: mot de passe oublié
+
+# check_email
+If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in: Si un compte correspondant au mail renseigné existe, vous recevrez un mail contenant un code permettant de re-initialiser votre mot de passe. Ce lien expirera dans
+If you don't receive an email please check your spam folder or: Si vous n'avez pas reçu de mail, verifiez votre dossier spam ou
+try again: essayez encore

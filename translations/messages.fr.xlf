@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="awzJBNC" resname="Users">
+        <source>Users</source>
+        <target>Utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="tRLZfny" resname="User">
+        <source>User</source>
+        <target>l'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="B5vqzi8" resname="HomePage">
+        <source>HomePage</source>
+        <target>Page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="GVQgzbY" resname="Search Google">
+        <source>Search Google</source>
+        <target>Recherche Google</target>
+      </trans-unit>
+      <trans-unit id="QAxmkmc" resname="Is Verified">
+        <source>Is Verified</source>
+        <target>Verifié</target>
+      </trans-unit>
+      <trans-unit id="wlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Rôles</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Adresse mail</target>
+      </trans-unit>
+      <trans-unit id="Z7aWRoY" resname="Dashboard">
+        <source>Dashboard</source>
+        <target>Tableau de bord</target>
+      </trans-unit>
+      <trans-unit id="718iPw6" resname="ROLE_ADMIN">
+        <source>ROLE_ADMIN</source>
+        <target>Administrateur</target>
+      </trans-unit>
+      <trans-unit id="QwyrF2e" resname="ROLE_SAV_SUPERVISOR">
+        <source>ROLE_SAV_SUPERVISOR</source>
+        <target>Superviseur SAV</target>
+      </trans-unit>
+      <trans-unit id="bsqb4We" resname="ROLE_SAV">
+        <source>ROLE_SAV</source>
+        <target>Operateur SAV</target>
+      </trans-unit>
+      <trans-unit id="YXZ26gK" resname="Please enter a password">
+        <source>Please enter a password</source>
+        <target>Veuillez renseigner un mot de passe.</target>
+      </trans-unit>
+      <trans-unit id="kIFuuJC" resname="Only emails from @postic.fr are accepted.">
+        <source>Only emails from @postic.fr are accepted.</source>
+        <target>Seul les mails en @postic.fr sont acceptés.</target>
+      </trans-unit>
+      <trans-unit id="YRKYC4." resname="There is already an account with this email">
+        <source>There is already an account with this email</source>
+        <target>Un compte avec cet email existe déjà.</target>
+      </trans-unit>
+      <trans-unit id="3QLw0Ms" resname="Admin dashboard">
+        <source>Admin dashboard</source>
+        <target>Page administrateur</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="pqMtvFY" resname="Link">
+        <source>Link</source>
+        <target>Lien</target>
+      </trans-unit>
+      <trans-unit id="1X1ItxA" resname="Log Out">
+        <source>Log Out</source>
+        <target>Deconnexion</target>
+      </trans-unit>
+      <trans-unit id="Le1KPuZ" resname="Log In">
+        <source>Log In</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="XiuOllA" resname="Sign up">
+        <source>Sign up</source>
+        <target>Inscription</target>
+      </trans-unit>
+      <trans-unit id="Sm_IPf9" resname="Please login">
+        <source>Please login</source>
+        <target>Veuillez vous connecter</target>
+      </trans-unit>
+      <trans-unit id="4kFVeC1" resname="forgotten password">
+        <source>forgotten password</source>
+        <target>mot de passe oublié</target>
+      </trans-unit>
+      <trans-unit id="cKRES0w" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in">
+        <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in</source>
+        <target>Si un compte correspondant au mail renseigné existe, vous recevrez un mail contenant un code permettant de re-initialiser votre mot de passe. Ce lien expirera dans</target>
+      </trans-unit>
+      <trans-unit id="bs9avOq" resname="If you don't receive an email please check your spam folder or">
+        <source>If you don't receive an email please check your spam folder or</source>
+        <target>Si vous n'avez pas reçu de mail, verifiez votre dossier spam ou</target>
+      </trans-unit>
+      <trans-unit id="W13t7jL" resname="try again">
+        <source>try again</source>
+        <target>essayez encore</target>
+      </trans-unit>
+      <trans-unit id="acVpEs4" resname="You are logged in as">
+        <source>You are logged in as</source>
+        <target>__You are logged in as</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>__Logout</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

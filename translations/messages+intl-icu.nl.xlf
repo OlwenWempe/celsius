@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="nl" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="3QLw0Ms" resname="Admin dashboard">
+        <source>Admin dashboard</source>
+        <target>Admin dashboard</target>
+      </trans-unit>
+      <trans-unit id="C5vqzi8" resname="HomePage">
+        <source>HomePage</source>
+        <target>Startpagina</target>
+      </trans-unit>
+      <trans-unit id="AwzJBNC" resname="Users">
+        <source>Users</source>
+        <target>Gebruikers</target>
+      </trans-unit>
+      <trans-unit id="TRLZfny" resname="User">
+        <source>User</source>
+        <target>gebruiker</target>
+      </trans-unit>
+      <trans-unit id="gVQgzbY" resname="Search Google">
+        <source>Search Google</source>
+        <target>Zoeken met Google</target>
+      </trans-unit>
+      <trans-unit id="qAxmkmc" resname="Is Verified">
+        <source>Is Verified</source>
+        <target>Geverifieerd</target>
+      </trans-unit>
+      <trans-unit id="WlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Rollen</target>
+      </trans-unit>
+      <trans-unit id="7A8iPw6" resname="ROLE_ADMIN">
+        <source>ROLE_ADMIN</source>
+        <target>Administrator</target>
+      </trans-unit>
+      <trans-unit id="QWyrF2e" resname="ROLE_SAV_SUPERVISOR">
+        <source>ROLE_SAV_SUPERVISOR</source>
+        <target>After-sales supervisor</target>
+      </trans-unit>
+      <trans-unit id="Bsqb4We" resname="ROLE_SAV">
+        <source>ROLE_SAV</source>
+        <target>After-sales operator</target>
+      </trans-unit>
+      <trans-unit id="cKRES0w" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in">
+        <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in</source>
+        <target>Als een account met dezelfde email bestaat dan hebben we je een email gestuurd om je wachtwoord te vernieuwen. Deze link blijft geldig</target>
+      </trans-unit>
+      <trans-unit id="bs9avOq" resname="If you don't receive an email please check your spam folder or">
+        <source>If you don't receive an email please check your spam folder or</source>
+        <target>Als je geen e-mail ontvangt, controleer dan je spamfolder of</target>
+      </trans-unit>
+      <trans-unit id="W13t7jL" resname="try again">
+        <source>try again</source>
+        <target>opnieuw proberen</target>
+      </trans-unit>
+      <trans-unit id="acVpEs4" resname="You are logged in as">
+        <source>You are logged in as</source>
+        <target>Je staat aangemeld als</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="Sm_IPf9" resname="Please login">
+        <source>Please login</source>
+        <target>Even aanmelden AUB</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Wachtwoord</target>
+      </trans-unit>
+      <trans-unit id="Le1KPuZ" resname="Log In">
+        <source>Log In</source>
+        <target>Log In</target>
+      </trans-unit>
+      <trans-unit id="4kFVeC1" resname="forgotten password">
+        <source>forgotten password</source>
+        <target>wachtwoord vergeten</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="pqMtvFY" resname="Link">
+        <source>Link</source>
+        <target>Link</target>
+      </trans-unit>
+      <trans-unit id="1X1ItxA" resname="Log Out">
+        <source>Log Out</source>
+        <target>Log Out</target>
+      </trans-unit>
+      <trans-unit id="XiuOllA" resname="Sign up">
+        <source>Sign up</source>
+        <target>Aanmelden</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
