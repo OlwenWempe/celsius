@@ -62,6 +62,8 @@ class DashboardController extends AbstractDashboardController
 
         // ]);
         yield MenuItem::linkToCrud('Sites', 'fa-solid fa-location-dot', Lieu::class);
+        yield MenuItem::linkToUrl('Profiler', 'fa-solid fa-circle-info', $this->generateUrl('_profiler_home'));
+        yield MenuItem::linkToUrl('phpinfo', 'fa-solid fa-file-lines', $this->generateUrl('_profiler_phpinfo'));
         yield MenuItem::linkToUrl('Search Google', 'fab fa-google', 'https://google.com');
     }
 
@@ -71,11 +73,7 @@ class DashboardController extends AbstractDashboardController
             ->add(Crud::PAGE_INDEX, Action::DETAIL);
     }
 
-    public function configureAssets(): Assets
-    {
-        return parent::configureAssets()
-            ->addWebpackEncoreEntry('admin');
-    }
+
     // public function configureUserMenu(UserInterface $user): UserMenu
     // {
     //     return parent::configureUserMenu()
