@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ReflexEntries{% endblock %}
+
+{% block body %}
+    <h1>Edit ReflexEntries</h1>
+
+    {{ include('reflex_entries/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_reflex_entries_index') }}">back to list</a>
+
+    {{ include('reflex_entries/_delete_form.html.twig') }}
+{% endblock %}

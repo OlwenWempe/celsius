@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ReflexEntries index{% endblock %}
+
+{% block body %}
+    <h1>ReflexEntries index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>SocietyCode</th>
+                <th>AgencyCode</th>
+                <th>ServiceCode</th>
+                <th>Operator</th>
+                <th>Contractor</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reflex_entry in reflex_entries %}
+            <tr>
+                <td>{{ reflex_entry.id }}</td>
+                <td>{{ reflex_entry.societyCode }}</td>
+                <td>{{ reflex_entry.agencyCode }}</td>
+                <td>{{ reflex_entry.serviceCode }}</td>
+                <td>{{ reflex_entry.operator }}</td>
+                <td>{{ reflex_entry.contractor }}</td>
+                <td>
+                    <a href="{{ path('app_reflex_entries_show', {'id': reflex_entry.id}) }}">show</a>
+                    <a href="{{ path('app_reflex_entries_edit', {'id': reflex_entry.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_reflex_entries_new') }}">Create new</a>
+{% endblock %}

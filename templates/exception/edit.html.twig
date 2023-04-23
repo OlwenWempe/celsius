@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Exception{% endblock %}
+
+{% block body %}
+    <h1>Edit Exception</h1>
+
+    {{ include('exception/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_exception_index') }}">back to list</a>
+
+    {{ include('exception/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SearchCriteria{% endblock %}
+
+{% block body %}
+    <h1>SearchCriteria</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ search_criterion.id }}</td>
+            </tr>
+            <tr>
+                <th>ChargingDatePosition</th>
+                <td>{{ search_criterion.ChargingDatePosition }}</td>
+            </tr>
+            <tr>
+                <th>LoadingLocationPosition</th>
+                <td>{{ search_criterion.loadingLocationPosition }}</td>
+            </tr>
+            <tr>
+                <th>OrderNumberPosition</th>
+                <td>{{ search_criterion.orderNumberPosition }}</td>
+            </tr>
+            <tr>
+                <th>DeliveryLocationPosition</th>
+                <td>{{ search_criterion.deliveryLocationPosition }}</td>
+            </tr>
+            <tr>
+                <th>QuantityPosition</th>
+                <td>{{ search_criterion.quantityPosition }}</td>
+            </tr>
+            <tr>
+                <th>WeightPosition</th>
+                <td>{{ search_criterion.weightPosition }}</td>
+            </tr>
+            <tr>
+                <th>PaletsPosition</th>
+                <td>{{ search_criterion.paletsPosition }}</td>
+            </tr>
+            <tr>
+                <th>DeliveryDatePosition</th>
+                <td>{{ search_criterion.deliveryDatePosition }}</td>
+            </tr>
+            <tr>
+                <th>CommentPosition</th>
+                <td>{{ search_criterion.commentPosition }}</td>
+            </tr>
+            <tr>
+                <th>AddField1Position</th>
+                <td>{{ search_criterion.addField1Position }}</td>
+            </tr>
+            <tr>
+                <th>AddField2Position</th>
+                <td>{{ search_criterion.addField2Position }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_search_criteria_index') }}">back to list</a>
+
+    <a href="{{ path('app_search_criteria_edit', {'id': search_criterion.id}) }}">edit</a>
+
+    {{ include('search_criteria/_delete_form.html.twig') }}
+{% endblock %}

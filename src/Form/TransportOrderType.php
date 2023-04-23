@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Form;
+
+use App\Entity\TransportOrder;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class TransportOrderType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options): void
+    {
+        $builder
+            ->add('orderNumber')
+            ->add('tripNumber')
+            ->add('loadingDate')
+            ->add('deliveryDate')
+            ->add('weight')
+            ->add('qtyPalets')
+            ->add('quantity')
+            ->add('billingCode')
+            ->add('appointmentNecessity')
+            ->add('comment')
+            ->add('isDone')
+            ->add('createdAt')
+            ->add('updatedAt')
+            ->add('contractor')
+            ->add('user')
+        ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver): void
+    {
+        $resolver->setDefaults([
+            'data_class' => TransportOrder::class,
+        ]);
+    }
+}

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TransportOrder index{% endblock %}
+
+{% block body %}
+    <h1>TransportOrder index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>OrderNumber</th>
+                <th>TripNumber</th>
+                <th>LoadingDate</th>
+                <th>DeliveryDate</th>
+                <th>Weight</th>
+                <th>QtyPalets</th>
+                <th>Quantity</th>
+                <th>BillingCode</th>
+                <th>AppointmentNecessity</th>
+                <th>Comment</th>
+                <th>IsDone</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transport_order in transport_orders %}
+            <tr>
+                <td>{{ transport_order.id }}</td>
+                <td>{{ transport_order.orderNumber }}</td>
+                <td>{{ transport_order.tripNumber }}</td>
+                <td>{{ transport_order.loadingDate ? transport_order.loadingDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ transport_order.deliveryDate ? transport_order.deliveryDate|date('Y-m-d') : '' }}</td>
+                <td>{{ transport_order.weight }}</td>
+                <td>{{ transport_order.qtyPalets }}</td>
+                <td>{{ transport_order.quantity }}</td>
+                <td>{{ transport_order.billingCode }}</td>
+                <td>{{ transport_order.appointmentNecessity ? 'Yes' : 'No' }}</td>
+                <td>{{ transport_order.comment }}</td>
+                <td>{{ transport_order.isDone ? 'Yes' : 'No' }}</td>
+                <td>{{ transport_order.createdAt ? transport_order.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ transport_order.updatedAt ? transport_order.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_transport_order_show', {'id': transport_order.id}) }}">show</a>
+                    <a href="{{ path('app_transport_order_edit', {'id': transport_order.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_transport_order_new') }}">Create new</a>
+{% endblock %}

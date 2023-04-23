@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TransportOrder{% endblock %}
+
+{% block body %}
+    <h1>Create new TransportOrder</h1>
+
+    {{ include('transport_order/_form.html.twig') }}
+
+    <a href="{{ path('app_transport_order_index') }}">back to list</a>
+{% endblock %}

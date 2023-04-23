@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TransportOrder{% endblock %}
+
+{% block body %}
+    <h1>TransportOrder</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ transport_order.id }}</td>
+            </tr>
+            <tr>
+                <th>OrderNumber</th>
+                <td>{{ transport_order.orderNumber }}</td>
+            </tr>
+            <tr>
+                <th>TripNumber</th>
+                <td>{{ transport_order.tripNumber }}</td>
+            </tr>
+            <tr>
+                <th>LoadingDate</th>
+                <td>{{ transport_order.loadingDate ? transport_order.loadingDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DeliveryDate</th>
+                <td>{{ transport_order.deliveryDate ? transport_order.deliveryDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Weight</th>
+                <td>{{ transport_order.weight }}</td>
+            </tr>
+            <tr>
+                <th>QtyPalets</th>
+                <td>{{ transport_order.qtyPalets }}</td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td>{{ transport_order.quantity }}</td>
+            </tr>
+            <tr>
+                <th>BillingCode</th>
+                <td>{{ transport_order.billingCode }}</td>
+            </tr>
+            <tr>
+                <th>AppointmentNecessity</th>
+                <td>{{ transport_order.appointmentNecessity ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Comment</th>
+                <td>{{ transport_order.comment }}</td>
+            </tr>
+            <tr>
+                <th>IsDone</th>
+                <td>{{ transport_order.isDone ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ transport_order.createdAt ? transport_order.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ transport_order.updatedAt ? transport_order.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_transport_order_index') }}">back to list</a>
+
+    <a href="{{ path('app_transport_order_edit', {'id': transport_order.id}) }}">edit</a>
+
+    {{ include('transport_order/_delete_form.html.twig') }}
+{% endblock %}

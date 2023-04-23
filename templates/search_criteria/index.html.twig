@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SearchCriteria index{% endblock %}
+
+{% block body %}
+    <h1>SearchCriteria index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ChargingDatePosition</th>
+                <th>LoadingLocationPosition</th>
+                <th>OrderNumberPosition</th>
+                <th>DeliveryLocationPosition</th>
+                <th>QuantityPosition</th>
+                <th>WeightPosition</th>
+                <th>PaletsPosition</th>
+                <th>DeliveryDatePosition</th>
+                <th>CommentPosition</th>
+                <th>AddField1Position</th>
+                <th>AddField2Position</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for search_criterion in search_criterias %}
+            <tr>
+                <td>{{ search_criterion.id }}</td>
+                <td>{{ search_criterion.ChargingDatePosition }}</td>
+                <td>{{ search_criterion.loadingLocationPosition }}</td>
+                <td>{{ search_criterion.orderNumberPosition }}</td>
+                <td>{{ search_criterion.deliveryLocationPosition }}</td>
+                <td>{{ search_criterion.quantityPosition }}</td>
+                <td>{{ search_criterion.weightPosition }}</td>
+                <td>{{ search_criterion.paletsPosition }}</td>
+                <td>{{ search_criterion.deliveryDatePosition }}</td>
+                <td>{{ search_criterion.commentPosition }}</td>
+                <td>{{ search_criterion.addField1Position }}</td>
+                <td>{{ search_criterion.addField2Position }}</td>
+                <td>
+                    <a href="{{ path('app_search_criteria_show', {'id': search_criterion.id}) }}">show</a>
+                    <a href="{{ path('app_search_criteria_edit', {'id': search_criterion.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_search_criteria_new') }}">Create new</a>
+{% endblock %}

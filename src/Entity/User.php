@@ -50,7 +50,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function __construct()
     {
-        $this->edis = new ArrayCollection();
         $this->transportOrders = new ArrayCollection();
     }
 

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SearchCriteria{% endblock %}
+
+{% block body %}
+    <h1>Edit SearchCriteria</h1>
+
+    {{ include('search_criteria/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_search_criteria_index') }}">back to list</a>
+
+    {{ include('search_criteria/_delete_form.html.twig') }}
+{% endblock %}

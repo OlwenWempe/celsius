@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Exception{% endblock %}
+
+{% block body %}
+    <h1>Create new Exception</h1>
+
+    {{ include('exception/_form.html.twig') }}
+
+    <a href="{{ path('app_exception_index') }}">back to list</a>
+{% endblock %}

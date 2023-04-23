@@ -38,7 +38,8 @@ class UserCrudController extends AbstractCrudController
             ->renderAsSwitch(false);
         yield BooleanField::new('is_verified')
             ->onlyOnForms();
-
+        yield Field::new('first_name');
+        yield Field::new('last_name');
         yield Field::new('password')
             ->onlyOnForms();
     }

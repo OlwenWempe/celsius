@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Lieu;
+use App\Entity\TypeLieu;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class LieuCrudController extends AbstractCrudController

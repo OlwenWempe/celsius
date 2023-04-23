@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ReflexEntries{% endblock %}
+
+{% block body %}
+    <h1>Create new ReflexEntries</h1>
+
+    {{ include('reflex_entries/_form.html.twig') }}
+
+    <a href="{{ path('app_reflex_entries_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SearchCriteria{% endblock %}
+
+{% block body %}
+    <h1>Create new SearchCriteria</h1>
+
+    {{ include('search_criteria/_form.html.twig') }}
+
+    <a href="{{ path('app_search_criteria_index') }}">back to list</a>
+{% endblock %}
