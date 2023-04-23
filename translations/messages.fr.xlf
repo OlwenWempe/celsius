@@ -111,11 +111,11 @@
       </trans-unit>
       <trans-unit id="acVpEs4" resname="You are logged in as">
         <source>You are logged in as</source>
-        <target>__You are logged in as</target>
+        <target>Vous êtes connecté en tant que</target>
       </trans-unit>
       <trans-unit id="0FJ_Sz1" resname="Logout">
         <source>Logout</source>
-        <target>__Logout</target>
+        <target>Déconnexion</target>
       </trans-unit>
     </body>
   </file>

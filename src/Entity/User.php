@@ -36,15 +36,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Edi::class)]
-    private Collection $edis;
-
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+    #[ORM\Column(length: 255)]
+    private ?string $first_name = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $last_name = null;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: TransportOrder::class)]
+    private Collection $transportOrders;
 
     public function __construct()
     {
         $this->edis = new ArrayCollection();
+        $this->transportOrders = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -117,35 +124,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    /**
-     * @return Collection<int, Edi>
-     */
-    public function getEdis(): Collection
-    {
-        return $this->edis;
-    }
-
-    public function addEdi(Edi $edi): self
-    {
-        if (!$this->edis->contains($edi)) {
-            $this->edis->add($edi);
-            $edi->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEdi(Edi $edi): self
-    {
-        if ($this->edis->removeElement($edi)) {
-            // set the owning side to null (unless already changed)
-            if ($edi->getUser() === $this) {
-                $edi->setUser(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function isVerified(): bool
     {
@@ -155,6 +133,60 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->first_name;
+    }
+
+    public function setFirstName(string $first_name): self
+    {
+        $this->first_name = $first_name;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->last_name;
+    }
+
+    public function setLastName(string $last_name): self
+    {
+        $this->last_name = $last_name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, TransportOrder>
+     */
+    public function getTransportOrders(): Collection
+    {
+        return $this->transportOrders;
+    }
+
+    public function addTransportOrder(TransportOrder $transportOrder): self
+    {
+        if (!$this->transportOrders->contains($transportOrder)) {
+            $this->transportOrders->add($transportOrder);
+            $transportOrder->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTransportOrder(TransportOrder $transportOrder): self
+    {
+        if ($this->transportOrders->removeElement($transportOrder)) {
+            // set the owning side to null (unless already changed)
+            if ($transportOrder->getUser() === $this) {
+                $transportOrder->setUser(null);
+            }
+        }
 
         return $this;
     }

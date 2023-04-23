@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Edi;
+use App\Entity\Exception;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Edi>
+ * @extends ServiceEntityRepository<Exception>
  *
- * @method Edi|null find($id, $lockMode = null, $lockVersion = null)
- * @method Edi|null findOneBy(array $criteria, array $orderBy = null)
- * @method Edi[]    findAll()
- * @method Edi[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Exception|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Exception|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Exception[]    findAll()
+ * @method Exception[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EdiRepository extends ServiceEntityRepository
+class ExceptionRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Edi::class);
+        parent::__construct($registry, Exception::class);
     }
 
-    public function save(Edi $entity, bool $flush = false): void
+    public function save(Exception $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class EdiRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Edi $entity, bool $flush = false): void
+    public function remove(Exception $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class EdiRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Edi[] Returns an array of Edi objects
+//     * @return Exception[] Returns an array of Exception objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class EdiRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Edi
+//    public function findOneBySomeField($value): ?Exception
 //    {
 //        return $this->createQueryBuilder('e')
 //            ->andWhere('e.exampleField = :val')

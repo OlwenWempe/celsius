@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Contractor;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
@@ -9,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Lieu;
+use App\Entity\TypeLieu;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
@@ -58,10 +60,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToUrl('HomePage', 'fa fa-home', $this->generateUrl('app_main'));
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-dashboard');
         yield MenuItem::linkToCrud('Users', 'fa-solid fa-users', User::class);
+        yield MenuItem::linkToCrud('Contractors', 'fa-solid fa-users', Contractor::class);
         // yield MenuItem::subMenu('User', 'fa-solid fa-users', User::class)->setSubItems([
 
         // ]);
         yield MenuItem::linkToCrud('Sites', 'fa-solid fa-location-dot', Lieu::class);
+        yield MenuItem::linkToCrud('Site Type', 'fa-solid fa-location-dot', TypeLieu::class);
         yield MenuItem::linkToUrl('Profiler', 'fa-solid fa-circle-info', $this->generateUrl('_profiler_home'));
         yield MenuItem::linkToUrl('phpinfo', 'fa-solid fa-file-lines', $this->generateUrl('_profiler_phpinfo'));
         yield MenuItem::linkToUrl('Search Google', 'fab fa-google', 'https://google.com');

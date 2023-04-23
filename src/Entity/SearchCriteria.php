@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\SearchCriteriaRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SearchCriteriaRepository::class)]
@@ -13,188 +15,210 @@ class SearchCriteria
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $date_chargement = null;
+    #[ORM\Column]
+    private ?int $ChargingDatePosition = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $chargeur = null;
+    #[ORM\Column]
+    private ?int $loadingLocationPosition = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $numero_commande = null;
+    #[ORM\Column]
+    private ?int $orderNumberPosition = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $livreur = null;
+    #[ORM\Column]
+    private ?int $deliveryLocationPosition = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $colis = null;
+    #[ORM\Column]
+    private ?int $quantityPosition = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $poids = null;
+    #[ORM\Column]
+    private ?int $weightPosition = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $nbr_pal = null;
+    #[ORM\Column]
+    private ?int $paletsPosition = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $date_livraison = null;
+    #[ORM\Column]
+    private ?int $deliveryDatePosition = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $commentaire = null;
+    #[ORM\Column]
+    private ?int $commentPosition = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $champ_opt_1 = null;
+    #[ORM\Column]
+    private ?int $addField1Position = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $champ_opt_2 = null;
+    #[ORM\Column]
+    private ?int $addField2Position = null;
 
-    #[ORM\ManyToOne(inversedBy: 'search_criteria')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?DonneurDOrdre $donneurDOrdre = null;
+    #[ORM\OneToMany(mappedBy: 'searchCriteria', targetEntity: Contractor::class)]
+    private Collection $contractors;
+
+    public function __construct()
+    {
+        $this->contractors = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDateChargement(): ?string
+    public function getChargingDatePosition(): ?int
     {
-        return $this->date_chargement;
+        return $this->ChargingDatePosition;
     }
 
-    public function setDateChargement(string $date_chargement): self
+    public function setChargingDatePosition(int $ChargingDatePosition): self
     {
-        $this->date_chargement = $date_chargement;
+        $this->ChargingDatePosition = $ChargingDatePosition;
 
         return $this;
     }
 
-    public function getChargeur(): ?string
+    public function getLoadingLocationPosition(): ?int
     {
-        return $this->chargeur;
+        return $this->loadingLocationPosition;
     }
 
-    public function setChargeur(string $chargeur): self
+    public function setLoadingLocationPosition(int $loadingLocationPosition): self
     {
-        $this->chargeur = $chargeur;
+        $this->loadingLocationPosition = $loadingLocationPosition;
 
         return $this;
     }
 
-    public function getNumeroCommande(): ?string
+    public function getOrderNumberPosition(): ?int
     {
-        return $this->numero_commande;
+        return $this->orderNumberPosition;
     }
 
-    public function setNumeroCommande(string $numero_commande): self
+    public function setOrderNumberPosition(int $orderNumberPosition): self
     {
-        $this->numero_commande = $numero_commande;
+        $this->orderNumberPosition = $orderNumberPosition;
 
         return $this;
     }
 
-    public function getLivreur(): ?string
+    public function getDeliveryLocationPosition(): ?int
     {
-        return $this->livreur;
+        return $this->deliveryLocationPosition;
     }
 
-    public function setLivreur(string $livreur): self
+    public function setDeliveryLocationPosition(int $deliveryLocationPosition): self
     {
-        $this->livreur = $livreur;
+        $this->deliveryLocationPosition = $deliveryLocationPosition;
 
         return $this;
     }
 
-    public function getColis(): ?string
+    public function getQuantityPosition(): ?int
     {
-        return $this->colis;
+        return $this->quantityPosition;
     }
 
-    public function setColis(string $colis): self
+    public function setQuantityPosition(int $quantityPosition): self
     {
-        $this->colis = $colis;
+        $this->quantityPosition = $quantityPosition;
 
         return $this;
     }
 
-    public function getPoids(): ?string
+    public function getWeightPosition(): ?int
     {
-        return $this->poids;
+        return $this->weightPosition;
     }
 
-    public function setPoids(string $poids): self
+    public function setWeightPosition(int $weightPosition): self
     {
-        $this->poids = $poids;
+        $this->weightPosition = $weightPosition;
 
         return $this;
     }
 
-    public function getNbrPal(): ?string
+    public function getPaletsPosition(): ?int
     {
-        return $this->nbr_pal;
+        return $this->paletsPosition;
     }
 
-    public function setNbrPal(string $nbr_pal): self
+    public function setPaletsPosition(int $paletsPosition): self
     {
-        $this->nbr_pal = $nbr_pal;
+        $this->paletsPosition = $paletsPosition;
 
         return $this;
     }
 
-    public function getDateLivraison(): ?string
+    public function getDeliveryDatePosition(): ?int
     {
-        return $this->date_livraison;
+        return $this->deliveryDatePosition;
     }
 
-    public function setDateLivraison(string $date_livraison): self
+    public function setDeliveryDatePosition(int $deliveryDatePosition): self
     {
-        $this->date_livraison = $date_livraison;
+        $this->deliveryDatePosition = $deliveryDatePosition;
 
         return $this;
     }
 
-    public function getCommentaire(): ?string
+    public function getCommentPosition(): ?int
     {
-        return $this->commentaire;
+        return $this->commentPosition;
     }
 
-    public function setCommentaire(string $commentaire): self
+    public function setCommentPosition(int $commentPosition): self
     {
-        $this->commentaire = $commentaire;
+        $this->commentPosition = $commentPosition;
 
         return $this;
     }
 
-    public function getChampOpt1(): ?string
+    public function getAddField1Position(): ?int
     {
-        return $this->champ_opt_1;
+        return $this->addField1Position;
     }
 
-    public function setChampOpt1(?string $champ_opt_1): self
+    public function setAddField1Position(int $addField1Position): self
     {
-        $this->champ_opt_1 = $champ_opt_1;
+        $this->addField1Position = $addField1Position;
 
         return $this;
     }
 
-    public function getChampOpt2(): ?string
+    public function getAddField2Position(): ?int
     {
-        return $this->champ_opt_2;
+        return $this->addField2Position;
     }
 
-    public function setChampOpt2(?string $champ_opt_2): self
+    public function setAddField2Position(int $addField2Position): self
     {
-        $this->champ_opt_2 = $champ_opt_2;
+        $this->addField2Position = $addField2Position;
 
         return $this;
     }
 
-    public function getDonneurDOrdre(): ?DonneurDOrdre
+    /**
+     * @return Collection<int, Contractor>
+     */
+    public function getContractors(): Collection
     {
-        return $this->donneurDOrdre;
+        return $this->contractors;
     }
 
-    public function setDonneurDOrdre(?DonneurDOrdre $donneurDOrdre): self
+    public function addContractor(Contractor $contractor): self
     {
-        $this->donneurDOrdre = $donneurDOrdre;
+        if (!$this->contractors->contains($contractor)) {
+            $this->contractors->add($contractor);
+            $contractor->setSearchCriteria($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContractor(Contractor $contractor): self
+    {
+        if ($this->contractors->removeElement($contractor)) {
+            // set the owning side to null (unless already changed)
+            if ($contractor->getSearchCriteria() === $this) {
+                $contractor->setSearchCriteria(null);
+            }
+        }
 
         return $this;
     }
