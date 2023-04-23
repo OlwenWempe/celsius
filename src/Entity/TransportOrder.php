@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TransportOrderRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -60,6 +62,14 @@ class TransportOrder
     #[ORM\ManyToOne(inversedBy: 'transportOrders')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
+
+    #[ORM\ManyToMany(targetEntity: Lieu::class, inversedBy: 'transportOrders')]
+    private Collection $lieu;
+
+    public function __construct()
+    {
+        $this->lieu = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -242,6 +252,30 @@ class TransportOrder
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Lieu>
+     */
+    public function getLieu(): Collection
+    {
+        return $this->lieu;
+    }
+
+    public function addLieu(Lieu $lieu): self
+    {
+        if (!$this->lieu->contains($lieu)) {
+            $this->lieu->add($lieu);
+        }
+
+        return $this;
+    }
+
+    public function removeLieu(Lieu $lieu): self
+    {
+        $this->lieu->removeElement($lieu);
 
         return $this;
     }

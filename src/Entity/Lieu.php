@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\LieuRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LieuRepository::class)]
@@ -27,6 +29,14 @@ class Lieu
 
     #[ORM\ManyToOne]
     private ?TypeLieu $type_lieu = null;
+
+    #[ORM\ManyToMany(targetEntity: TransportOrder::class, mappedBy: 'lieu')]
+    private Collection $transportOrders;
+
+    public function __construct()
+    {
+        $this->transportOrders = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -89,6 +99,33 @@ class Lieu
     public function setTypeLieu(?TypeLieu $type_lieu): self
     {
         $this->type_lieu = $type_lieu;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, TransportOrder>
+     */
+    public function getTransportOrders(): Collection
+    {
+        return $this->transportOrders;
+    }
+
+    public function addTransportOrder(TransportOrder $transportOrder): self
+    {
+        if (!$this->transportOrders->contains($transportOrder)) {
+            $this->transportOrders->add($transportOrder);
+            $transportOrder->addLieu($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTransportOrder(TransportOrder $transportOrder): self
+    {
+        if ($this->transportOrders->removeElement($transportOrder)) {
+            $transportOrder->removeLieu($this);
+        }
 
         return $this;
     }
